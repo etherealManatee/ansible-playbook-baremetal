@@ -1,0 +1,10 @@
+- name: check if go is installed
+  ansible.builtin.shell: /usr/local/go/bin/go version
+  args:
+    executable: /bin/bash
+  register: go_command
+  ignore_errors: true
+
+- name: run script to install specific go version
+  ansible.builtin.script:
+    cmd: ../
